@@ -1,0 +1,23 @@
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<div id="app">
+	<h2><b>{{ title }}<b></h2><br>
+	<img src='https://upload.wikimedia.org/wikipedia/commons/8/83/Methode_newton.png'><br>
+	<br><br>
+
+	<a href='main.html'><button>backward</button></a>&nbsp;
+	<button>forward</button>
+</div>
+
+<script>
+  const { createApp, ref } = Vue
+
+  createApp({
+    setup() {
+      const title = ref('Newton\'s method')
+      return {
+	title
+      }
+    }
+  }).mount('#app')
+</script>

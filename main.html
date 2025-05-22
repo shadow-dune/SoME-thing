@@ -1,26 +1,23 @@
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
 <div id="app">
-	<h1><b>{{ message }}</b></h1><br>
-	<h2>{{ titles[0] }}</h2><br>
-	<img src='https://upload.wikimedia.org/wikipedia/commons/8/83/Methode_newton.png'><br>
+	<h1><b>{{ message }}</b></h1>
 	<br><br>
 
-	<button>backward</button>&nbsp;<button>forward</button>
+	<button>backward</button>&nbsp;
+	<a href='newton.html'><button>forward</button></a>
 </div>
 
 <script>
   const { createApp, ref } = Vue
 
-  createApp({
+  const app = createApp({
     setup() {
-
       const message = ref('Approximation methods and series accelerators!')
-      const titles = ['Newton\'s method']
       return {
-        message,
-	titles
+        message
       }
     }
-  }).mount('#app')
+  })
+  app.mount('#app')
 </script>
