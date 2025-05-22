@@ -1,4 +1,5 @@
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="sqrtnewton.js"></script>
 
 <link rel="stylesheet" href="styles.css" />
 
@@ -13,7 +14,10 @@
 	<h3>Example</h3>
 	<div class="textnl">{{ example }}</div>
 	<br>
-
+	<h3>Interactive Example</h3>
+	Value = {{ interm }}<br>
+	<button @click="interm = newtonsqrt(interm,2)">Iterate</button>
+	<br><br>
 	<a href='main.html'><button>backward</button></a>&nbsp;
 	<button>forward</button>
 </div>
@@ -39,9 +43,14 @@ x = 1.5 - (1.5^2-2)/(2*1.5) = 1.4167
 and so on...
 This is already quite close to the real value (1.14167^2 = 2.007) even after just two iterations.
 `)
+
+      const interm = ref(1)
+
       return {
 	title,
-	example
+	example,
+	interm,
+	newtonsqrt
       }
     }
   }).mount('#app')
