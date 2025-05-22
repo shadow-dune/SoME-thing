@@ -1,13 +1,16 @@
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-<div id="app">{{ message }}</div>
+<div id="app">
+	<b>{{ message }}</b><br><br>
+	<button>backward</button>&nbsp;<button>forward</button>
+</div>
 
 <script>
   const { createApp, ref } = Vue
 
   createApp({
     setup() {
-      const message = ref('Hello vue!')
+      const message = ref('Approximation methods and series accelerators!')
       return {
         message
       }
