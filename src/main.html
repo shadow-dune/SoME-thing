@@ -1,15 +1,34 @@
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-<link rel="stylesheet" href="./styles/styles.css" />
+<link rel="stylesheet" href="styles.css" />
 
-<div id="app">
+<html>
+  <head>
+    <style>
+      .a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 300px;
+        border: 10px solid rgb(128, 82, 82);
+      }
+    </style>  
+    <link rel="stylesheet" href="back.css" />
+  </head>
+  
+  <body> 
+      <div class="a">
+        <div id="app">
+        
+        <h1><center><b>{{ message }}</b></center></h1>
+        <br>
 
-	<h1><b>{{ message }}</b></h1>
-	<br>
 
-	<button>backward</button>&nbsp;
-	<a href='newton.html'><button>forward</button></a>
-</div>
+        <a href='newton.html'><center><button>next</button></center></a>
+        </div>
+      </div>  
+  </body>
 
 <script>
   const { createApp, ref } = Vue
@@ -24,3 +43,4 @@
   })
   app.mount('#app')
 </script>
+</html>
