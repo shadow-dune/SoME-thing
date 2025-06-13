@@ -1,6 +1,6 @@
 require 'sqlite3'
 
-db = SQLite3::Database.new ":memory:"
+db = SQLite3::Database.new ":memory:" # Remember to change this!
 
 db.execute <<-END
   CREATE TABLE IF NOT EXISTS POLL (
