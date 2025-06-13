@@ -1,0 +1,37 @@
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<link rel="stylesheet" href="./styles/button.css" />
+
+<div id="app">
+    <span>{{ text }}</span><br>
+    <button @click="readapi">Click</button>
+</div>
+
+<script>
+  const { createApp, ref } = Vue
+
+  const text = ref('Hello!')
+
+  function readapi() {
+      apiurl = 'http://127.0.0.1:4567/'
+
+      const xhr = new XMLHttpRequest()
+      xhr.open("GET",apiurl)
+      xhr.send()
+
+      xhr.onload = () => {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+              text.value = xhr.response;
+          }
+      }
+  }
+
+  const app = createApp({
+    setup() {
+      return {
+          text,
+          readapi
+      }
+    }
+  })
+  app.mount('#app')
+</script>
